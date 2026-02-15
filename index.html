@@ -1,0 +1,134 @@
+import 'package:flutter/material.dart';
+import '../config/app_theme.dart';
+
+class PrivacyPolicyScreen extends StatelessWidget {
+  const PrivacyPolicyScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Política de Privacidade'),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Política de Privacidade - Quiz da Bíblia',
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    color: AppTheme.azulPrimario,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Última atualização: 13 de Fevereiro de 2026',
+              style: TextStyle(fontStyle: FontStyle.italic, color: Colors.grey),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'A sua privacidade é importante para nós. Esta política de privacidade explica como o aplicativo Quiz da Bíblia coleta, usa e protege suas informações.',
+            ),
+            const SizedBox(height: 24),
+            _buildSectionTitle(context, '1. Coleta e Uso de Informações'),
+            const Text(
+              'O aplicativo Quiz da Bíblia é projetado para minimizar a coleta de dados.',
+            ),
+            const SizedBox(height: 12),
+            _buildSubsectionTitle(context, '1.1 Dados Coletados Automaticamente'),
+            const Text(
+              'O aplicativo pode coletar certas informações automaticamente, incluindo, mas não se limitando a:\n'
+              '• Tipo de dispositivo móvel utilizado.\n'
+              '• Identificador único do dispositivo (se necessário para funcionalidades específicas).\n'
+              '• Sistema operacional do dispositivo.\n'
+              '• Informações sobre como você usa o aplicativo (ex: níveis completados, conquistas desbloqueadas).',
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Finalidade: Esses dados são usados exclusivamente para melhorar a experiência do usuário, corrigir erros (bugs) e manter o progresso do jogo salvo localmente no seu dispositivo.',
+              style: TextStyle(fontWeight: FontWeight.w500),
+            ),
+            const SizedBox(height: 12),
+            _buildSubsectionTitle(context, '1.2 Dados Fornecidos pelo Usuário'),
+            const Text(
+              'O aplicativo pode permitir que você insira um nome de usuário ou apelido para personalização.\n'
+              '• Nome de Usuário: Armazenado localmente para exibir nas telas de boas-vindas e ranking.\n'
+              '• Foto de Perfil: Se você optar por enviar uma foto, ela será armazenada apenas localmente no seu dispositivo.',
+            ),
+            const SizedBox(height: 24),
+            _buildSectionTitle(context, '2. Permissões do Dispositivo'),
+            const Text(
+              'O aplicativo pode solicitar as seguintes permissões para funcionar corretamente:\n\n'
+              '• Armazenamento (Storage): Necessário para salvar seu progresso, conquistas e configurações localmente no dispositivo.\n'
+              '• Internet/Rede: Utilizado (se aplicável) para funcionalidades como verificar atualizações ou carregar recursos remotos, embora o jogo seja projetado para funcionar offline.',
+            ),
+            const SizedBox(height: 24),
+            _buildSectionTitle(context, '3. Serviços de Terceiros'),
+            const Text(
+              'O aplicativo pode utilizar serviços de terceiros que podem coletar informações usadas para identificá-lo. Exemplos incluem:\n\n'
+              '• Google Play Services: Para distribuição e serviços básicos da plataforma Android.',
+            ),
+            const SizedBox(height: 24),
+            _buildSectionTitle(context, '4. Segurança'),
+            const Text(
+              'Valorizamos sua confiança em nos fornecer suas informações pessoais e nos esforçamos para usar meios comercialmente aceitáveis de protegê-las. No entanto, lembre-se de que nenhum método de transmissão pela internet ou método de armazenamento eletrônico é 100% seguro e confiável, e não podemos garantir sua segurança absoluta.',
+            ),
+            const SizedBox(height: 24),
+            _buildSectionTitle(context, '5. Privacidade de Crianças'),
+            const Text(
+              'O Quiz da Bíblia é seguro para todas as idades e não coleta intencionalmente informações de identificação pessoal de crianças menores de 13 anos. Se descobrirmos que coletamos informações pessoais de uma criança menor de 13 anos, tomaremos medidas para excluir essas informações de nossos servidores (se aplicável).',
+            ),
+            const SizedBox(height: 24),
+            _buildSectionTitle(context, '6. Alterações a Esta Política de Privacidade'),
+            const Text(
+              'Podemos atualizar nossa Política de Privacidade de tempos em tempos. Assim, aconselhamos que você revise esta página periodicamente para quaisquer alterações. Notificaremos você sobre quaisquer alterações publicando a nova Política de Privacidade nesta página.',
+            ),
+            const SizedBox(height: 24),
+            _buildSectionTitle(context, '7. Contato'),
+            const Text(
+              'Se você tiver alguma dúvida ou sugestão sobre nossa Política de Privacidade, não hesite em nos contatar.',
+            ),
+            const SizedBox(height: 16),
+            const Divider(),
+            const SizedBox(height: 8),
+            const Text(
+              'Desenvolvedor: Daniel\n'
+              'Email de Contato: oficialquizdabiblia@gmail.com',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 32),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(BuildContext context, String title) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12.0),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              color: AppTheme.azulPrimario,
+              fontWeight: FontWeight.bold,
+            ),
+      ),
+    );
+  }
+
+  Widget _buildSubsectionTitle(BuildContext context, String title) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Text(
+        title,
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: AppTheme.azulSecundario,
+        ),
+      ),
+    );
+  }
+}
