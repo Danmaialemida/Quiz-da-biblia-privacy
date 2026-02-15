@@ -1,134 +1,72 @@
-import 'package:flutter/material.dart';
-import '../config/app_theme.dart';
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Política de Privacidade — Quiz da Bíblia</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.55; margin: 0; background:#f7f7fb; color:#111; }
+    header { background:#0b3d91; color:#fff; padding: 24px 16px; }
+    main { max-width: 900px; margin: 0 auto; background:#fff; padding: 24px 16px; }
+    h1 { margin: 0 0 6px; font-size: 22px; }
+    .updated { opacity:.9; font-style: italic; }
+    h2 { color:#0b3d91; margin-top: 28px; }
+    h3 { color:#1f5fbf; margin-top: 16px; }
+    ul { margin-top: 8px; }
+    footer { max-width: 900px; margin: 0 auto; padding: 16px; font-size: 14px; color:#333; }
+    .box { background:#f2f6ff; padding: 12px 14px; border-left: 4px solid #0b3d91; margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Política de Privacidade — Quiz da Bíblia</h1>
+    <div class="updated">Última atualização: 13 de Fevereiro de 2026</div>
+  </header>
 
-class PrivacyPolicyScreen extends StatelessWidget {
-  const PrivacyPolicyScreen({super.key});
+  <main>
+    <p>A sua privacidade é importante para nós. Esta política de privacidade explica como o aplicativo <strong>Quiz da Bíblia</strong> trata suas informações.</p>
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Política de Privacidade'),
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Política de Privacidade - Quiz da Bíblia',
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: AppTheme.azulPrimario,
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Última atualização: 13 de Fevereiro de 2026',
-              style: TextStyle(fontStyle: FontStyle.italic, color: Colors.grey),
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              'A sua privacidade é importante para nós. Esta política de privacidade explica como o aplicativo Quiz da Bíblia coleta, usa e protege suas informações.',
-            ),
-            const SizedBox(height: 24),
-            _buildSectionTitle(context, '1. Coleta e Uso de Informações'),
-            const Text(
-              'O aplicativo Quiz da Bíblia é projetado para minimizar a coleta de dados.',
-            ),
-            const SizedBox(height: 12),
-            _buildSubsectionTitle(context, '1.1 Dados Coletados Automaticamente'),
-            const Text(
-              'O aplicativo pode coletar certas informações automaticamente, incluindo, mas não se limitando a:\n'
-              '• Tipo de dispositivo móvel utilizado.\n'
-              '• Identificador único do dispositivo (se necessário para funcionalidades específicas).\n'
-              '• Sistema operacional do dispositivo.\n'
-              '• Informações sobre como você usa o aplicativo (ex: níveis completados, conquistas desbloqueadas).',
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Finalidade: Esses dados são usados exclusivamente para melhorar a experiência do usuário, corrigir erros (bugs) e manter o progresso do jogo salvo localmente no seu dispositivo.',
-              style: TextStyle(fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(height: 12),
-            _buildSubsectionTitle(context, '1.2 Dados Fornecidos pelo Usuário'),
-            const Text(
-              'O aplicativo pode permitir que você insira um nome de usuário ou apelido para personalização.\n'
-              '• Nome de Usuário: Armazenado localmente para exibir nas telas de boas-vindas e ranking.\n'
-              '• Foto de Perfil: Se você optar por enviar uma foto, ela será armazenada apenas localmente no seu dispositivo.',
-            ),
-            const SizedBox(height: 24),
-            _buildSectionTitle(context, '2. Permissões do Dispositivo'),
-            const Text(
-              'O aplicativo pode solicitar as seguintes permissões para funcionar corretamente:\n\n'
-              '• Armazenamento (Storage): Necessário para salvar seu progresso, conquistas e configurações localmente no dispositivo.\n'
-              '• Internet/Rede: Utilizado (se aplicável) para funcionalidades como verificar atualizações ou carregar recursos remotos, embora o jogo seja projetado para funcionar offline.',
-            ),
-            const SizedBox(height: 24),
-            _buildSectionTitle(context, '3. Serviços de Terceiros'),
-            const Text(
-              'O aplicativo pode utilizar serviços de terceiros que podem coletar informações usadas para identificá-lo. Exemplos incluem:\n\n'
-              '• Google Play Services: Para distribuição e serviços básicos da plataforma Android.',
-            ),
-            const SizedBox(height: 24),
-            _buildSectionTitle(context, '4. Segurança'),
-            const Text(
-              'Valorizamos sua confiança em nos fornecer suas informações pessoais e nos esforçamos para usar meios comercialmente aceitáveis de protegê-las. No entanto, lembre-se de que nenhum método de transmissão pela internet ou método de armazenamento eletrônico é 100% seguro e confiável, e não podemos garantir sua segurança absoluta.',
-            ),
-            const SizedBox(height: 24),
-            _buildSectionTitle(context, '5. Privacidade de Crianças'),
-            const Text(
-              'O Quiz da Bíblia é seguro para todas as idades e não coleta intencionalmente informações de identificação pessoal de crianças menores de 13 anos. Se descobrirmos que coletamos informações pessoais de uma criança menor de 13 anos, tomaremos medidas para excluir essas informações de nossos servidores (se aplicável).',
-            ),
-            const SizedBox(height: 24),
-            _buildSectionTitle(context, '6. Alterações a Esta Política de Privacidade'),
-            const Text(
-              'Podemos atualizar nossa Política de Privacidade de tempos em tempos. Assim, aconselhamos que você revise esta página periodicamente para quaisquer alterações. Notificaremos você sobre quaisquer alterações publicando a nova Política de Privacidade nesta página.',
-            ),
-            const SizedBox(height: 24),
-            _buildSectionTitle(context, '7. Contato'),
-            const Text(
-              'Se você tiver alguma dúvida ou sugestão sobre nossa Política de Privacidade, não hesite em nos contatar.',
-            ),
-            const SizedBox(height: 16),
-            const Divider(),
-            const SizedBox(height: 8),
-            const Text(
-              'Desenvolvedor: Daniel\n'
-              'Email de Contato: oficialquizdabiblia@gmail.com',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 32),
-          ],
-        ),
-      ),
-    );
-  }
+    <h2>1. Coleta e uso de informações</h2>
+    <p>O aplicativo Quiz da Bíblia é projetado para funcionar <strong>offline</strong> e minimizar a coleta de dados.</p>
 
-  Widget _buildSectionTitle(BuildContext context, String title) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
-      child: Text(
-        title,
-        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: AppTheme.azulPrimario,
-              fontWeight: FontWeight.bold,
-            ),
-      ),
-    );
-  }
+    <h3>1.1 Dados coletados automaticamente</h3>
+    <p>Por padrão, o aplicativo <strong>não coleta</strong> dados pessoais identificáveis e <strong>não envia</strong> dados para servidores.</p>
+    <div class="box">
+      <strong>Uso local:</strong> O app pode registrar informações de uso (ex.: níveis completados, conquistas desbloqueadas) <strong>somente no seu dispositivo</strong>, para manter o progresso do jogo.
+    </div>
 
-  Widget _buildSubsectionTitle(BuildContext context, String title) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Text(
-        title,
-        style: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: AppTheme.azulSecundario,
-        ),
-      ),
-    );
-  }
-}
+    <h3>1.2 Dados fornecidos pelo usuário</h3>
+    <ul>
+      <li><strong>Nome de usuário/apelido:</strong> armazenado localmente para personalização (ex.: boas-vindas e ranking local).</li>
+      <li><strong>Foto de perfil (opcional):</strong> se você adicionar uma foto, ela fica armazenada apenas localmente no seu dispositivo.</li>
+    </ul>
+
+    <h2>2. Permissões do dispositivo</h2>
+    <ul>
+      <li><strong>Armazenamento (Storage):</strong> para salvar progresso, conquistas e configurações localmente.</li>
+      <li><strong>Internet/Rede (se aplicável):</strong> pode ser usada apenas para recursos da plataforma (ex.: Google Play) ou futuras atualizações. O jogo é projetado para funcionar offline.</li>
+    </ul>
+
+    <h2>3. Serviços de terceiros</h2>
+    <p>O aplicativo é distribuído pela Google Play e pode depender de componentes da plataforma Android (ex.: <strong>Google Play Services</strong>) para funcionamento básico do ambiente. O Quiz da Bíblia não integra, por padrão, serviços de rastreamento/analytics.</p>
+
+    <h2>4. Segurança</h2>
+    <p>Nos esforçamos para proteger suas informações. Como o app funciona offline e armazena dados localmente, a segurança também depende das proteções do seu dispositivo (senha, biometria, etc.).</p>
+
+    <h2>5. Privacidade de crianças</h2>
+    <p>O Quiz da Bíblia é adequado para todas as idades e não coleta intencionalmente informações pessoais identificáveis de crianças menores de 13 anos.</p>
+
+    <h2>6. Alterações nesta política</h2>
+    <p>Podemos atualizar esta Política de Privacidade de tempos em tempos. Recomendamos revisar esta página periodicamente. Alterações serão publicadas aqui.</p>
+
+    <h2>7. Contato</h2>
+    <p>Se você tiver dúvidas ou sugestões sobre esta Política de Privacidade, entre em contato:</p>
+    <p><strong>Desenvolvedor:</strong> Daniel<br/>
+       <strong>Email:</strong> oficialquizdabiblia@gmail.com</p>
+  </main>
+
+  <footer>
+    © Quiz da Bíblia — Política de Privacidade
+  </footer>
+</body>
+</html>
